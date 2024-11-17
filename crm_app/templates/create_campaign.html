@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Campaign{% endblock %}
+
+{% block content %}
+<h1>Create Campaign</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Campaign Name:</label>
+    <input type="text" name="name" id="name" required><br>
+
+    <label for="criteria">Audience Criteria:</label>
+    <textarea name="criteria" id="criteria" rows="5"></textarea><br>
+
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

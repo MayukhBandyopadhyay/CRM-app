@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Communication Log{% endblock %}
+
+{% block content %}
+<h1>Communication Log</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Campaign</th>
+            <th>Customer</th>
+            <th>Status</th>
+            <th>Sent At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in communication_logs %}
+        <tr>
+            <td>{{ log.campaign.name }}</td>
+            <td>{{ log.customer.name }}</td>
+            <td>{{ log.status }}</td>
+            <td>{{ log.sent_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
